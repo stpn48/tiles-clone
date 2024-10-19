@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
+import { Merriweather } from "next/font/google";
 import localFont from "next/font/local";
+
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const merriweather = Merriweather({
+  subsets: ["latin"], // Specify the character subsets you need
+  weight: ["400", "700"], // Choose the weights you need
 });
 
 export const metadata: Metadata = {
@@ -25,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${merriweather.className} antialiased`}>{children}</body>
     </html>
   );
 }
