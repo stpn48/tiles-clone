@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import { Merriweather } from "next/font/google";
 import localFont from "next/font/local";
 
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const merriweather = Merriweather({
   subsets: ["latin"], // Specify the character subsets you need
   weight: ["400", "700"], // Choose the weights you need
+});
+
+const GeistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "400 900",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${merriweather.className} antialiased`}>{children}</body>
+      <body className={`${merriweather.className} text-sm ${GeistSans.variable} antialiased`}>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }
