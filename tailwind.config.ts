@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        spread: "0 3px 12px -1px rgba(0, 0, 0, 0.3)",
+      },
+      fontFamily: {
+        geistSans: ["var(--font-geist-sans)", "monospace"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
