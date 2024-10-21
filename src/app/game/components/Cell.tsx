@@ -91,7 +91,16 @@ export function Cell({ cell, cellIndex }: Props) {
       // if match and the second cell is not empty, set the current selected cell to that second one
       setFirstCellIndex(cellIndex);
     }
-  }, [firstCellIndex, setFirstCellIndex, cellIndex, grid, setGrid, setCombo, setMessage]);
+  }, [
+    firstCellIndex,
+    setFirstCellIndex,
+    cellIndex,
+    grid,
+    setGrid,
+    setCombo,
+    setMessage,
+    setPerfectCombo,
+  ]);
 
   return (
     <motion.div
