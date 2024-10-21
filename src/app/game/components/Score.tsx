@@ -4,13 +4,22 @@ import { useGameLogicStore } from "@/store/gameLogicStore";
 import React, { useEffect } from "react";
 
 export function Score() {
-  const { combo, setMaxCombo, maxCombo } = useGameLogicStore();
+  const { combo, setMaxCombo, maxCombo, setTotalCombo, totalCombo, setGameFinished } =
+    useGameLogicStore();
 
   useEffect(() => {
-    if (combo > maxCombo) {
-      setMaxCombo(combo);
+    setMaxCombo((prev) => Math.max(prev, combo));
+
+    setTotalCombo((prev) => {
+      return prev + 1;
+    });
+  }, [combo, setMaxCombo, setTotalCombo]);
+
+  useEffect(() => {
+    if (totalCombo === 44) {
+      setGameFinished(true);
     }
-  }, [combo, setMaxCombo, maxCombo]);
+  }, [totalCombo, setGameFinished]);
 
   return (
     <div className="flex h-full flex-col justify-start gap-10 font-geistSans font-medium">

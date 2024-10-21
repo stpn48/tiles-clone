@@ -1,13 +1,12 @@
 import { Modal } from "@/components/Modal";
-import { li } from "framer-motion/client";
 import Image from "next/image";
 import React from "react";
 
 const list1Elements = [
   "Find combos: Same-colored shapes or backgrounds shared by 2 tiles. Each tile has multiple visual elements.",
-  "Tap tiles to remove the matches you find. Tiles don&apos;t have to be adjacent",
+  "Tap tiles to remove the matches you find. Tiles don't have to be adjacent",
   "To create a long combo, match the second tile you tap to a new one.",
-  "Continue matching until the board is cleared. You won&apos;t lose your long combo if you end on an empty tile.",
+  "Continue matching until the board is cleared. You won't lose your long combo if you end on an empty tile.",
 ];
 
 type Props = {
@@ -29,7 +28,9 @@ export function GameInstructionsModal({ closeModal }: Props) {
       </div>
       <ul className="mt-10 list-disc font-geistSans">
         {list1Elements.map((element) => (
-          <li className="mb-2">{element}</li>
+          <li key={element} className="mb-2">
+            {element}
+          </li>
         ))}
       </ul>
     </Modal>

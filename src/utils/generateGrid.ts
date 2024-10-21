@@ -55,7 +55,7 @@ function findPatternForCell(cell: Pattern[], availablePatterns: Pattern[]) {
   return null; // Fallback if no unique pattern is found
 }
 
-function shuffleArray(array: any[]) {
+function shuffleArray(array: number[]) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1)); // Random index from 0 to i
     [array[i], array[j]] = [array[j], array[i]]; // Swap elements
@@ -63,35 +63,37 @@ function shuffleArray(array: any[]) {
   return array;
 }
 
-function validateGrid(grid: Pattern[][], shuffledPatternCounts: number[]) {
-  // 1. Check the grid size
-  if (grid.length !== 30 || grid.some((row) => row.length !== 3)) {
-    throw new Error("Grid does not have the expected size.");
-  }
+// function validateGrid(grid: Pattern[][], shuffledPatternCounts: number[]) {
+//   // 1. Check the grid size
+//   if (grid.length !== 30 || grid.some((row) => row.length !== 3)) {
+//     throw new Error("Grid does not have the expected size.");
+//   }
 
-  // 2. Check for unique patterns in each cell
-  grid.forEach((cell) => {
-    if (new Set(cell).size !== cell.length) {
-      throw new Error("Duplicate patterns found in a cell.");
-    }
-  });
+//   // 2. Check for unique patterns in each cell
+//   grid.forEach((cell) => {
+//     if (new Set(cell).size !== cell.length) {
+//       throw new Error("Duplicate patterns found in a cell.");
+//     }
+//   });
 
-  // 3. Count occurrences of each pattern
-  const patternCountMap = new Map<string, number>();
+//   // 3. Count occurrences of each pattern
+//   const patternCountMap = new Map<string, number>();
 
-  grid.forEach((row) => {
-    row.forEach((pattern) => {
-      patternCountMap.set(pattern.id, (patternCountMap.get(pattern.id) || 0) + 1);
-    });
-  });
+//   grid.forEach((row) => {
+//     row.forEach((pattern) => {
+//       patternCountMap.set(pattern.id, (patternCountMap.get(pattern.id) || 0) + 1);
+//     });
+//   });
 
-  // 4. Validate the counts against the original pattern counts
-  patterns.forEach((pattern, index) => {
-    const expectedCount = shuffledPatternCounts[index];
-    const actualCount = patternCountMap.get(pattern.id) || 0;
+//   // 4. Validate the counts against the original pattern counts
+//   patterns.forEach((pattern, index) => {
+//     const expectedCount = shuffledPatternCounts[index];
+//     const actualCount = patternCountMap.get(pattern.id) || 0;
 
-    if (actualCount !== expectedCount) {
-      throw new Error(`Pattern ${pattern.id} does not have the expected count. Expected: ${expectedCount}, Actual: ${actualCount}`);
-    }
-  });
-}
+//     if (actualCount !== expectedCount) {
+//       throw new Error(
+//         `Pattern ${pattern.id} does not have the expected count. Expected: ${expectedCount}, Actual: ${actualCount}`,
+//       );
+//     }
+//   });
+// }
