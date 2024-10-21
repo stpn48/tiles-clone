@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tiles Clone - New York Times Game (Educational Project)
 
-## Getting Started
+This is a clone of the **Tiles** game by The New York Times. This project is built solely for educational purposes, and I do not claim ownership over any aspect of the original game. The intent is to practice and demonstrate coding skills using **React** and **Next.js**, as well as exploring game development in the web space.
 
-First, run the development server:
+## ⚠️ Disclaimer
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project is a **non-commercial** fan-made recreation of the New York Times' game **Tiles**. All intellectual property related to the original game belongs to The New York Times. I do not claim ownership of any assets, mechanics, or branding related to the original game.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is for **educational purposes only**. It is not meant for distribution, sale, or any commercial use. If you wish to play the official version of Tiles, please visit the New York Times website:  
+[New York Times Games](https://www.nytimes.com/puzzles/tiles)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 Purpose of the Project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The goal of this project is to:
 
-## Learn More
+- **Learn** and practice frontend development using React and Next.js.
+- **Explore** game mechanics and how they can be implemented in a web application.
+- **Experiment** with animation, state management, and UI/UX design in a game context.
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js** (React framework)
+- **Tailwind CSS** (for styling)
+- **TypeScript** (for functionality)
+- **HTML5/CSS3** (for layout and presentation)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💻 Features
 
-## Deploy on Vercel
+- Grid Generation Logic
+- Interactive tile-matching gameplay
+- Animated tile movements and interactions
+- Scoring and progress tracking (basic functionality)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚧 Project Status
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is currently a work in progress and will continue to evolve as I learn and experiment with new techniques.
